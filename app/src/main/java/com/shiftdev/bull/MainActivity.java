@@ -1,7 +1,9 @@
 package com.shiftdev.bull;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -199,7 +201,28 @@ public class MainActivity extends AppCompatActivity {
                     Timber.d(e.toString());
                }
           });
+
+
+          try {
+               InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+               imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+          } catch (Exception e) {
+               Timber.w(e.getMessage());
+          }
+
+
+          //UPDATE APP WIDGET HERE SO THAT THE LAST CALCULATION GETS SAVED TO THE WIDGET WITH THE INFORMATION THE USER PROVIDES upon making calculation
+          //   setWidget(calculation);
+
+
      }
+
+
+     private void setWidget(Calculation calculationToPassToWidget) {
+          WidgetAppService.startWidgetService(getApplicationContext(), calculationToPassToWidget);
+          Toast.makeText(getApplicationContext(), "WidgetUpdated!", Toast.LENGTH_LONG).show();
+     }
+
 
      private void setResultFields(int intCount, double doubleBuy, double doubleSell, double doubleComm) {
           double realizedVal = calculateRealizedValue(intCount, doubleBuy, doubleSell, doubleComm);

@@ -2,17 +2,31 @@ package com.shiftdev.bull;
 
 import androidx.annotation.Nullable;
 
+//import org.parceler.Parcel;
+//import org.parceler.ParcelConstructor;
+
+//@Parcel
 public class Calculation {
-     private String symbol;
-     private int shares;
-     private double buy;
-     private double sell;
-     private double comm;
+     //   @SerializedName("symbol")
+     public String symbol;
+
+     //    @SerializedName("shares")
+     public int shares;
+
+     //  @SerializedName("buy")
+     public double buy;
+
+     //@SerializedName("sell")
+     public double sell;
+
+     //   @SerializedName("comm")
+     public double comm;
 
      public Calculation() {
           //no arg constructor
      }
 
+     //  @ParcelConstructor
      Calculation(@Nullable String symbol, int shares, double buy, double sell, double comm) {
           this.symbol = symbol;
           this.shares = shares;
@@ -59,5 +73,16 @@ public class Calculation {
 
      public void setComm(double comm) {
           this.comm = comm;
+     }
+
+     @Override
+     public String toString() {
+          return "Calculation{" +
+                  "symbol='" + symbol + '\'' +
+                  ", shares=" + shares +
+                  ", buy=" + buy +
+                  ", sell=" + sell +
+                  ", comm=" + comm +
+                  '}';
      }
 }

@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Bull</string>
-    <string name="errRealized">calculation does not exist</string>
+    <string name="errRealized">Enter Your Calculation</string>
     <string name="ipl">IPL</string>
     <string name="_42">42</string>
     <string name="buy">buy</string>
@@ -26,4 +26,5 @@
     <string name="buy_amount">Buy Amount</string>
     <string name="realized_value">Realized Value</string>
     <string name="_0">$0</string>
+    <string name="view">View</string>
 </resources>
