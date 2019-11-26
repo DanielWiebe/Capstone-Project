@@ -5,273 +5,278 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <!--    Top Frame-->
+        android:layout_height="wrap_content">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
+            <!--    Top Frame-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="2">
-
-                <TextView
-                    android:id="@+id/TVstockSymbol"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/stock_symbol"
-                    android:textAlignment="textEnd" />
-
-                <EditText
-
-                    android:id="@+id/ETsymbol"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:hint="@string/input_stock_symbol"
-                    android:inputType="textCapCharacters"
-                    tools:ignore="Autofill" />
-
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="2">
-
-                <TextView
-                    android:id="@+id/TVnumShares"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/number_of_shares"
-                    android:textAlignment="textEnd" />
-
-                <EditText
-                    android:id="@+id/ETnumShares"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:hint="@string/input_number_of_shares"
-                    android:inputType="number"
-                    tools:ignore="Autofill" />
-
-
-            </LinearLayout>
-        </LinearLayout>
-
-        <!--    buyPrice Frame-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="2">
-
-            <TextView
-                android:id="@+id/TVbuyPrice"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/buy_price"
-                android:textAlignment="textEnd" />
-
-            <EditText
-
-                android:id="@+id/ETbuyPrice"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="@string/input_buy_price"
-                android:inputType="numberDecimal"
-                tools:ignore="Autofill" />
-
-
-        </LinearLayout>
-
-        <!--Sell Frame-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="2">
-
-                <TextView
-                    android:id="@+id/TVsellPrice"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/sell_price"
-                    android:textAlignment="textEnd" />
-
-
-                <EditText
-                    android:id="@+id/ETsellPrice"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:hint="@string/input_sell_price"
-                    android:inputType="numberDecimal"
-                    tools:ignore="Autofill" />
-
-
-            </LinearLayout>
-
-            <!--Comm widgets-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="2">
-
-                <TextView
-                    android:id="@+id/TVcomm"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/trade_commission"
-                    android:textAlignment="textEnd" />
-
-                <EditText
-                    android:id="@+id/ETcomm"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:hint="@string/input_commission"
-
-                    android:inputType="numberDecimal"
-                    tools:ignore="Autofill" />
-
-
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            style="?android:attr/buttonBarStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="2">
-
-            <Button
-                android:id="@+id/loadButton"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="loadPrevCalc"
-                android:text="@string/previous"
-                tools:ignore="ButtonStyle" />
-
-            <Button
-                android:id="@+id/updateButton"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="updateCalculation"
-                android:text="@string/update"
-                android:visibility="gone"
-                tools:ignore="ButtonStyle" />
-
-            <Button
-                android:id="@+id/calculateButton"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:backgroundTint="#00FF00"
-                android:onClick="saveCalcInfo"
-                android:text="@string/calc"
-                tools:ignore="ButtonStyle" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:baselineAligned="false"
-            android:orientation="horizontal"
-            android:weightSum="3">
-
-            <LinearLayout
-                android:id="@+id/BuyTotalsLayout"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/buyHeader"
-                    android:layout_width="match_parent"
-
-                    android:layout_height="wrap_content"
-                    android:text="@string/buy_amount"
-                    android:textAlignment="center" />
-
-                <TextView
-                    android:id="@+id/TVbuyAmount"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/buy_cost"
-                    android:textAlignment="center"
-                    android:textSize="20sp" />
+                    android:orientation="horizontal"
+                    android:weightSum="2">
 
-                <TextView
-                    android:id="@+id/sellHeader"
+                    <TextView
+                        android:id="@+id/TVstockSymbol"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/stock_symbol"
+                        android:textAlignment="textEnd" />
+
+                    <EditText
+
+                        android:id="@+id/ETsymbol"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="@string/input_stock_symbol"
+                        android:inputType="textCapCharacters"
+                        tools:ignore="Autofill" />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/sell_amount"
-                    android:textAlignment="center" />
+                    android:orientation="horizontal"
+                    android:weightSum="2">
 
-                <TextView
-                    android:id="@+id/TVsellAmount"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/sell_cost"
-                    android:textAlignment="center"
-                    android:textSize="20sp" />
+                    <TextView
+                        android:id="@+id/TVnumShares"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/number_of_shares"
+                        android:textAlignment="textEnd" />
+
+                    <EditText
+                        android:id="@+id/ETnumShares"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="@string/input_number_of_shares"
+                        android:inputType="number"
+                        tools:ignore="Autofill" />
+
+
+                </LinearLayout>
             </LinearLayout>
 
+            <!--    buyPrice Frame-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/TVbuyPrice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/buy_price"
+                    android:textAlignment="textEnd" />
+
+                <EditText
+
+                    android:id="@+id/ETbuyPrice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/input_buy_price"
+                    android:inputType="numberDecimal"
+                    tools:ignore="Autofill" />
+
+
+            </LinearLayout>
+
+            <!--Sell Frame-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:id="@+id/TVsellPrice"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/sell_price"
+                        android:textAlignment="textEnd" />
+
+
+                    <EditText
+                        android:id="@+id/ETsellPrice"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="@string/input_sell_price"
+                        android:inputType="numberDecimal"
+                        tools:ignore="Autofill" />
+
+
+                </LinearLayout>
+
+                <!--Comm widgets-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:id="@+id/TVcomm"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/trade_commission"
+                        android:textAlignment="textEnd" />
+
+                    <EditText
+                        android:id="@+id/ETcomm"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="@string/input_commission"
+
+                        android:inputType="numberDecimal"
+                        tools:ignore="Autofill" />
+
+
+                </LinearLayout>
+            </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/realizedTotalsLayout"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="2"
-                android:gravity="center_vertical"
-                android:orientation="vertical"
-                android:textAlignment="center">
+                style="?android:attr/buttonBarStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
 
-                <TextView
-                    android:id="@+id/realizedValueHeader"
-                    android:layout_width="match_parent"
+                <Button
+                    android:id="@+id/loadButton"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/realized_value"
-                    android:textAlignment="center" />
+                    android:layout_weight="1"
+                    android:onClick="loadPrevCalc"
+                    android:text="@string/previous"
+                    tools:ignore="ButtonStyle" />
 
-                <TextView
-                    android:id="@+id/TVrealizedValue"
-                    android:layout_width="match_parent"
+                <Button
+                    android:id="@+id/updateButton"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/_0"
-                    android:textAlignment="center"
-                    android:textSize="40sp" />
+                    android:layout_weight="1"
+                    android:onClick="updateCalculation"
+                    android:text="@string/update"
+                    android:visibility="gone"
+                    tools:ignore="ButtonStyle" />
+
+                <Button
+                    android:id="@+id/calculateButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="#00FF00"
+                    android:onClick="saveCalcInfo"
+                    android:text="@string/calc"
+                    tools:ignore="ButtonStyle" />
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                android:weightSum="3">
 
+                <LinearLayout
+                    android:id="@+id/BuyTotalsLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/buyHeader"
+                        android:layout_width="match_parent"
+
+                        android:layout_height="wrap_content"
+                        android:text="@string/buy_amount"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/TVbuyAmount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/buy_cost"
+                        android:textAlignment="center"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/sellHeader"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sell_amount"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/TVsellAmount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sell_cost"
+                        android:textAlignment="center"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/realizedTotalsLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:textAlignment="center">
+
+                    <TextView
+                        android:id="@+id/realizedValueHeader"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/realized_value"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/TVrealizedValue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/_0"
+                        android:textAlignment="center"
+                        android:textSize="40sp" />
+                </LinearLayout>
+
+
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
+    </ScrollView>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/historyCalcRV"

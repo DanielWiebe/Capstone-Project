@@ -20,9 +20,9 @@
     <string name="buy_price">Buy Price</string>
     <string name="trade_commission">Trade Commission</string>
     <string name="input_commission">input commission</string>
-    <string name="sell_cost">Sell Cost</string>
+    <string name="sell_cost">--.--</string>
     <string name="sell_amount">Sell Amount</string>
-    <string name="buy_cost">Buy Cost</string>
+    <string name="buy_cost">--.--</string>
     <string name="buy_amount">Buy Amount</string>
     <string name="realized_value">Realized Value</string>
     <string name="_0">$0</string>

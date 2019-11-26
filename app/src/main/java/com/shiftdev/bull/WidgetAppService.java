@@ -10,20 +10,21 @@ import org.parceler.Parcels;
 
 import timber.log.Timber;
 
-class WidgetAppService extends IntentService {
+public class WidgetAppService extends IntentService {
 
 
      public static final String CALC_FROM_ACTIVITY = "CALC_FROM_ACTIVITY";
 
-     public WidgetAppService(String name) {
-          super(name);
+
+     public WidgetAppService() {
+          super("WidgetAppService");
      }
 
 
      public static void startWidgetService(Context context, Calculation calculationFromActivity) {
           Intent intent = new Intent(context, WidgetAppService.class);
           intent.putExtra(CALC_FROM_ACTIVITY, Parcels.wrap(calculationFromActivity));
-          Timber.w("Service class received calculation");
+          Timber.w("Service class received calculation which is %s", calculationFromActivity.toString());
           context.startService(intent);
      }
 

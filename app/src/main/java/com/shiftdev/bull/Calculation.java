@@ -2,31 +2,33 @@ package com.shiftdev.bull;
 
 import androidx.annotation.Nullable;
 
-//import org.parceler.Parcel;
-//import org.parceler.ParcelConstructor;
+import com.google.gson.annotations.SerializedName;
 
-//@Parcel
+import org.parceler.Parcel;
+import org.parceler.ParcelConstructor;
+
+@Parcel
 public class Calculation {
-     //   @SerializedName("symbol")
+     @SerializedName("symbol")
      public String symbol;
 
-     //    @SerializedName("shares")
+     @SerializedName("shares")
      public int shares;
 
-     //  @SerializedName("buy")
+     @SerializedName("buy")
      public double buy;
 
-     //@SerializedName("sell")
+     @SerializedName("sell")
      public double sell;
 
-     //   @SerializedName("comm")
+     @SerializedName("comm")
      public double comm;
 
      public Calculation() {
           //no arg constructor
      }
 
-     //  @ParcelConstructor
+     @ParcelConstructor
      Calculation(@Nullable String symbol, int shares, double buy, double sell, double comm) {
           this.symbol = symbol;
           this.shares = shares;

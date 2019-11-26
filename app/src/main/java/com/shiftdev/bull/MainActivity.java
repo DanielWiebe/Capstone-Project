@@ -212,7 +212,9 @@ public class MainActivity extends AppCompatActivity {
 
 
           //UPDATE APP WIDGET HERE SO THAT THE LAST CALCULATION GETS SAVED TO THE WIDGET WITH THE INFORMATION THE USER PROVIDES upon making calculation
-          //   setWidget(calculation);
+          Timber.w("bullwidget sending calculation to widget provider %s", calculation.toString());
+          setWidget(calculation);
+
 
 
      }

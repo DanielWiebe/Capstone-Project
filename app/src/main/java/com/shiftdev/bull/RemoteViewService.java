@@ -6,11 +6,12 @@ import android.content.Intent;
 import android.widget.RemoteViews;
 import android.widget.RemoteViewsService;
 
+import timber.log.Timber;
+
 import static com.shiftdev.bull.BullAppWidgetProvider.calculation;
 
 public class RemoteViewService extends RemoteViewsService {
 
-     Calculation calc;
 
      @Override
      public RemoteViewsFactory onGetViewFactory(Intent intent) {
@@ -19,6 +20,7 @@ public class RemoteViewService extends RemoteViewsService {
      }
 
      class BullWidgetItemFactory implements RemoteViewsFactory {
+          Calculation calc;
           private Context context;
           private int appWidgetId;
 
@@ -50,6 +52,7 @@ public class RemoteViewService extends RemoteViewsService {
 
           @Override
           public RemoteViews getViewAt(int i) {
+               Timber.w("bullprovider getViewAt Service");
                RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget_layout);
                views.setTextViewText(R.id.symbol, calc.getSymbol());
                views.setTextViewText(R.id.shares, String.valueOf(calc.getShares()));
@@ -81,5 +84,4 @@ public class RemoteViewService extends RemoteViewsService {
                return false;
           }
      }
-
 }
