@@ -10,10 +10,49 @@
     </style>
 
     <style name="AdapterStyle">
+        <item name="android:textColor">#FFFFFF</item>
         <item name="android:textSize">20sp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">wrap_content</item>
 
     </style>
+
+    <style name="lowerResultsStyle">
+        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="EditStyles">
+        <item name="android:textColorHint">@color/secondary_text</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:background">#333</item>
+        <item name="android:paddingStart">4dp</item>
+    </style>
+
+
+    <style name="MainTextsStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:paddingEnd">4dp</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:textAlignment">textEnd</item>
+    </style>
+
+    <style name="mainLayoutStyle">
+        <item name="android:layout_margin">4dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:weightSum">2</item>
+        <item name="android:paddingBottom">8dp</item>
+    </style>
+
 
 </resources>

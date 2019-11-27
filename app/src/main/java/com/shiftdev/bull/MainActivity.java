@@ -255,26 +255,28 @@ public class MainActivity extends AppCompatActivity {
           calcRef.update(KEY_COMMISSION, doubleComm);
      }
 
-
-     public void loadPrevCalc(View v) {
-          calcRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-               @Override
-               public void onSuccess(DocumentSnapshot documentSnapshot) {
-                    if (documentSnapshot.exists()) {
-                         Calculation calc = documentSnapshot.toObject(Calculation.class);
-                         assert calc != null;
-                         setEditTextWithDataFromFirebase(calc);
-                    } else {
-                         Toast.makeText(MainActivity.this, "Calc does not exist", Toast.LENGTH_SHORT).show();
-                    }
-               }
-          }).addOnFailureListener(new OnFailureListener() {
-               @Override
-               public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(MainActivity.this, "Error!", Toast.LENGTH_LONG).show();
-               }
-          });
-     }
+/*
+TODO fix this function or delete it.
+ */
+//     public void loadPrevCalc(View v) {
+//          calcRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+//               @Override
+//               public void onSuccess(DocumentSnapshot documentSnapshot) {
+//                    if (documentSnapshot.exists()) {
+//                         Calculation calc = documentSnapshot.toObject(Calculation.class);
+//                         assert calc != null;
+//                         setEditTextWithDataFromFirebase(calc);
+//                    } else {
+//                         Toast.makeText(MainActivity.this, "Calc does not exist", Toast.LENGTH_SHORT).show();
+//                    }
+//               }
+//          }).addOnFailureListener(new OnFailureListener() {
+//               @Override
+//               public void onFailure(@NonNull Exception e) {
+//                    Toast.makeText(MainActivity.this, "Error!", Toast.LENGTH_LONG).show();
+//               }
+//          });
+//     }
 
      private void setEditTextWithDataFromFirebase(Calculation calculation) {
           ETSymbol.setText(calculation.getSymbol());
