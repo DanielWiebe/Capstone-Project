@@ -233,9 +233,12 @@ public class MainActivity extends AppCompatActivity {
           if (realizedVal > 0) realizedTV.setBackgroundResource(R.color.green);
           else realizedTV.setBackgroundResource(R.color.red);
 
-          realizedTV.setText(String.valueOf(realizedVal));
-          buyTV.setText(String.valueOf(getBuyAmount(intCount, doubleBuy, doubleComm)));
-          sellTV.setText(String.valueOf(getSellAmount(intCount, doubleSell, doubleComm)));
+          realizedTV.setText("$");
+          realizedTV.append(String.valueOf(realizedVal));
+          buyTV.setText("$");
+          buyTV.append(String.valueOf(getBuyAmount(intCount, doubleBuy, doubleComm)));
+          sellTV.setText("$");
+          sellTV.append(String.valueOf(getSellAmount(intCount, doubleSell, doubleComm)));
      }
 
 

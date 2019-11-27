@@ -1,53 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    app:cardBackgroundColor="@color/colorPrimary">
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    android:background="@color/primary">
 
 
-        <TextView
-            android:id="@+id/symbol"
-            style="@style/AdapterStyle"
-            android:text="@string/ipl" />
+    <TextView
+        android:id="@+id/symbol"
+        style="@style/AdapterStyle"
+        android:text="@string/ipl" />
 
-        <TextView
-            android:id="@+id/shares"
-            style="@style/AdapterStyle"
-            android:layout_alignParentEnd="true"
-            android:text="@string/_42" />
+    <TextView
+        android:id="@+id/shares"
+        style="@style/AdapterStyle"
+        android:layout_alignParentEnd="true"
+        android:text="@string/_42" />
 
-        <TextView
-            android:id="@+id/buy"
-            style="@style/AdapterStyle"
-            android:layout_below="@id/symbol"
-            android:text="@string/buy" />
+    <TextView
+        android:id="@+id/buy"
+        style="@style/AdapterStyle"
+        android:layout_below="@id/symbol"
+        android:text="@string/buy" />
 
-        <TextView
-            android:id="@+id/sell"
-            style="@style/AdapterStyle"
-            android:layout_below="@id/buy"
-            android:text="@string/sell" />
+    <TextView
+        android:id="@+id/sell"
+        style="@style/AdapterStyle"
+        android:layout_below="@id/buy"
+        android:text="@string/sell" />
 
-        <TextView
-            android:id="@+id/comm"
-            style="@style/AdapterStyle"
-            android:layout_below="@id/shares"
-            android:layout_alignParentEnd="true"
-            android:text="@string/comm" />
+    <TextView
+        android:id="@+id/comm"
+        style="@style/AdapterStyle"
+        android:layout_below="@id/shares"
+        android:layout_alignParentEnd="true"
+        android:text="@string/comm" />
 
-        <Button
-            android:id="@+id/viewCalcBT"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/sell"
-            android:layout_alignParentEnd="true"
-            android:text="@string/view" />
-    </RelativeLayout>
-</FrameLayout>
-
+    <Button
+        android:id="@+id/viewCalcBT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sell"
+        android:layout_alignParentEnd="true"
+        android:text="@string/view" />
+</RelativeLayout>

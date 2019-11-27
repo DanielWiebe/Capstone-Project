@@ -27,4 +27,5 @@
     <string name="realized_value">Realized Value</string>
     <string name="_0">$0</string>
     <string name="view">View</string>
+    <string name="swipe_to_delete_and_tap_recall_to_fill_in_fields">Swipe to delete and tap Recall to fill in fields</string>
 </resources>
