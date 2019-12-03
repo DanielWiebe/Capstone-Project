@@ -47,7 +47,9 @@ public class RemoteViewService extends RemoteViewsService {
 
           @Override
           public int getCount() {
-               return 0;
+               if (calc == null)
+                    return 0;
+               return 1;
           }
 
           @Override
@@ -59,24 +61,24 @@ public class RemoteViewService extends RemoteViewsService {
                views.setTextViewText(R.id.buy, String.valueOf(calc.getBuy()));
                views.setTextViewText(R.id.sell, String.valueOf(calc.getSell()));
                views.setTextViewText(R.id.comm, String.valueOf(calc.getComm()));
-               Intent populateIntent = new Intent();
-               views.setOnClickFillInIntent(R.id.ll_parent_for_widget, populateIntent);
+               //Intent populateIntent = new Intent();
+               //views.setOnClickFillInIntent(R.id.ll_parent_for_widget, populateIntent);
                return views;
           }
 
           @Override
           public RemoteViews getLoadingView() {
-               return null;
+               return new RemoteViews(context.getPackageName(), R.layout.widget_layout);
           }
 
           @Override
           public int getViewTypeCount() {
-               return 1;
+               return 0;
           }
 
           @Override
           public long getItemId(int i) {
-               return 0;
+               return i;
           }
 
           @Override

@@ -216,7 +216,6 @@ public class MainActivity extends AppCompatActivity {
           setWidget(calculation);
 
 
-
      }
 
 

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "628570407526",
+    "firebase_url": "https://bull-176db.firebaseio.com",
+    "project_id": "bull-176db",
+    "storage_bucket": "bull-176db.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:628570407526:android:934687ed565f23566fe3a7",
+        "android_client_info": {
+          "package_name": "com.shiftdev.bull"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "628570407526-pa79dhm1jdsblnmigaig2fjudvhdvj5h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.shiftdev.bull",
+            "certificate_hash": "e3430384e1371fa8e850fc83621ae26e5b7cc2d9"
+          }
+        },
+        {
+          "client_id": "628570407526-p2i759a0qn4n6c6gjhsrhotqma84aubf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1eKDl1H2ewzajDQ6qBmUMG4sWgna4R-I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "628570407526-p2i759a0qn4n6c6gjhsrhotqma84aubf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
