@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -91,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
      @Override
      protected void onCreate(Bundle savedInstanceState) {
           super.onCreate(savedInstanceState);
+          FirebaseApp.initializeApp(getApplicationContext());
           setContentView(R.layout.activity_main);
           ButterKnife.bind(this);
           if (BuildConfig.DEBUG) Timber.plant(new Timber.DebugTree());
@@ -221,7 +223,7 @@ public class MainActivity extends AppCompatActivity {
 
      private void setWidget(Calculation calculationToPassToWidget) {
           WidgetAppService.startWidgetService(getApplicationContext(), calculationToPassToWidget);
-          Toast.makeText(getApplicationContext(), "WidgetUpdated!", Toast.LENGTH_LONG).show();
+          //Toast.makeText(getApplicationContext(), "WidgetUpdated!", Toast.LENGTH_LONG).show();
      }
 
 

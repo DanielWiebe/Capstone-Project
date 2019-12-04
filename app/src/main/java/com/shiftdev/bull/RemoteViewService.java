@@ -56,11 +56,8 @@ public class RemoteViewService extends RemoteViewsService {
           public RemoteViews getViewAt(int i) {
                Timber.w("bullprovider getViewAt Service");
                RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget_layout);
-               views.setTextViewText(R.id.symbol, calc.getSymbol());
-               views.setTextViewText(R.id.shares, String.valueOf(calc.getShares()));
-               views.setTextViewText(R.id.buy, String.valueOf(calc.getBuy()));
-               views.setTextViewText(R.id.sell, String.valueOf(calc.getSell()));
-               views.setTextViewText(R.id.comm, String.valueOf(calc.getComm()));
+
+
                //Intent populateIntent = new Intent();
                //views.setOnClickFillInIntent(R.id.ll_parent_for_widget, populateIntent);
                return views;
