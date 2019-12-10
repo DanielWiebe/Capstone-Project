@@ -222,8 +222,8 @@ public class MainActivity extends AppCompatActivity {
 
 
      private void setWidget(Calculation calculationToPassToWidget) {
-          WidgetAppService.startWidgetService(getApplicationContext(), calculationToPassToWidget);
-          //Toast.makeText(getApplicationContext(), "WidgetUpdated!", Toast.LENGTH_LONG).show();
+          BullAppWidgetProvider.manualUpdateWidgets(getApplicationContext(), calculationToPassToWidget);
+          Toast.makeText(getApplicationContext(), "Widget Updated!", Toast.LENGTH_LONG).show();
      }
 
 
@@ -259,28 +259,6 @@ public class MainActivity extends AppCompatActivity {
           calcRef.update(KEY_COMMISSION, doubleComm);
      }
 
-/*
-TODO fix this function or delete it.
- */
-//     public void loadPrevCalc(View v) {
-//          calcRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-//               @Override
-//               public void onSuccess(DocumentSnapshot documentSnapshot) {
-//                    if (documentSnapshot.exists()) {
-//                         Calculation calc = documentSnapshot.toObject(Calculation.class);
-//                         assert calc != null;
-//                         setEditTextWithDataFromFirebase(calc);
-//                    } else {
-//                         Toast.makeText(MainActivity.this, "Calc does not exist", Toast.LENGTH_SHORT).show();
-//                    }
-//               }
-//          }).addOnFailureListener(new OnFailureListener() {
-//               @Override
-//               public void onFailure(@NonNull Exception e) {
-//                    Toast.makeText(MainActivity.this, "Error!", Toast.LENGTH_LONG).show();
-//               }
-//          });
-//     }
 
      private void setEditTextWithDataFromFirebase(Calculation calculation) {
           ETSymbol.setText(calculation.getSymbol());
@@ -364,7 +342,6 @@ TODO fix this function or delete it.
                          Timber.d("Error of parsing commission double, that's okay, defaulting to 0 anyways: %s", e1.getMessage());
                          doubleComm = 0;
                     }
-
                }
                return this;
           }

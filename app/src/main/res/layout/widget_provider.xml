@@ -1,20 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:background="@color/primary"
     android:padding="8dp">
 
     <TextView
-        android:id="@+id/widget_app_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:text="@string/app_name" />
+        android:id="@+id/symbolHeader"
+        style="@style/AdapterStyle"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
 
-    <ListView
-        android:id="@+id/ll_parent_for_widget"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical" />
-</LinearLayout>
+        android:text="@string/symbol" />
+
+    <TextView
+        android:id="@+id/symbol"
+        style="@style/AdapterStyle"
+        android:layout_toEndOf="@id/symbolHeader"
+        android:text="@string/symbol_placeholder" />
+
+    <TextView
+        android:id="@+id/sharesHeader"
+        style="@style/AdapterStyle"
+        android:layout_toStartOf="@id/shares"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:text="@string/shares" />
+
+    <TextView
+        android:id="@+id/shares"
+        style="@style/AdapterStyle"
+        android:layout_alignParentEnd="true"
+        android:text="@string/share_placeholder" />
+
+    <TextView
+        android:id="@+id/buyHeader"
+        style="@style/AdapterStyle"
+        android:layout_below="@id/symbolHeader"
+        android:layout_alignParentStart="true"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:text="@string/buy_header_text" />
+
+    <TextView
+        android:id="@+id/buy"
+        style="@style/AdapterStyle"
+        android:layout_below="@id/symbol"
+        android:layout_toEndOf="@id/buyHeader"
+        android:text="@string/cost_placeholder" />
+
+
+    <TextView
+        android:id="@+id/sellHeader"
+        style="@style/AdapterStyle"
+        android:layout_below="@id/buyHeader"
+        android:layout_alignParentStart="true"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:text="@string/sell_header_text" />
+
+    <TextView
+        android:id="@+id/sell"
+        style="@style/AdapterStyle"
+        android:layout_below="@id/buy"
+        android:layout_toEndOf="@id/sellHeader"
+        android:text="@string/cost_placeholder" />
+
+
+    <TextView
+        android:id="@+id/commHeader"
+        style="@style/AdapterStyle"
+        android:layout_below="@id/sharesHeader"
+        android:layout_toStartOf="@id/comm"
+        android:text="@string/comm_header_text" />
+
+    <TextView
+        android:id="@+id/comm"
+        style="@style/AdapterStyle"
+        android:layout_below="@id/shares"
+        android:layout_alignParentEnd="true"
+        android:text="@string/cost_placeholder" />
+
+    <TextView
+        android:id="@+id/Header"
+        style="@style/AdapterStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sell"
+        android:layout_alignParentEnd="true"
+        android:text="@string/view"
+        android:textColor="@color/accent" />
+</RelativeLayout>

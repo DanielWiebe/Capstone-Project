@@ -10,33 +10,33 @@
     <TextView
         android:id="@+id/symbol"
         style="@style/AdapterStyle"
-        android:text="@string/ipl" />
+        android:text="@string/symbol_placeholder" />
 
 
     <TextView
         android:id="@+id/shares"
         style="@style/AdapterStyle"
         android:layout_alignParentEnd="true"
-        android:text="@string/_42" />
+        android:text="@string/share_placeholder" />
 
     <TextView
         android:id="@+id/buy"
         style="@style/AdapterStyle"
         android:layout_below="@id/symbol"
-        android:text="@string/buy" />
+        android:text="@string/cost_placeholder" />
 
     <TextView
         android:id="@+id/sell"
         style="@style/AdapterStyle"
         android:layout_below="@id/buy"
-        android:text="@string/sell" />
+        android:text="@string/cost_placeholder" />
 
     <TextView
         android:id="@+id/comm"
         style="@style/AdapterStyle"
         android:layout_below="@id/shares"
         android:layout_alignParentEnd="true"
-        android:text="@string/comm" />
+        android:text="@string/cost_placeholder" />
 
     <Button
         android:id="@+id/recallCalcBT"
